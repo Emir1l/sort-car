@@ -891,9 +891,11 @@ MonoBehaviour:
   m_isPersistant: 0
   FirstColor:
   - {fileID: 2100000, guid: fade7782697c52143a008f09b5ea1cde, type: 2}
+  - {fileID: 2100000, guid: 2405c9a28dfbae146bd57a747aa70e3c, type: 2}
   - {fileID: 2100000, guid: f5640640b25255b449baa7890a595e3b, type: 2}
   SecondColor:
   - {fileID: 2100000, guid: 83d5de7140f630e4487c579607b321da, type: 2}
+  - {fileID: 2100000, guid: 8311515740f11d045ab91beab78cef89, type: 2}
   - {fileID: 2100000, guid: af668381a97904e4d963f72dbcd0c178, type: 2}
 --- !u!1 &1175902020
 GameObject:
@@ -2102,8 +2104,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a2448f5487be78e49b3bb5df513a58c2, type: 2}
-  - {fileID: 2100000, guid: f7e42f8565bcda148ae5652231152711, type: 2}
-  - {fileID: 2100000, guid: a3b9caf5db1569540bd4ec8590b0657e, type: 2}
+  - {fileID: 2100000, guid: 2405c9a28dfbae146bd57a747aa70e3c, type: 2}
+  - {fileID: 2100000, guid: fade7782697c52143a008f09b5ea1cde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2259,8 +2261,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a2448f5487be78e49b3bb5df513a58c2, type: 2}
-  - {fileID: 2100000, guid: f7e42f8565bcda148ae5652231152711, type: 2}
-  - {fileID: 2100000, guid: a3b9caf5db1569540bd4ec8590b0657e, type: 2}
+  - {fileID: 2100000, guid: 8311515740f11d045ab91beab78cef89, type: 2}
+  - {fileID: 2100000, guid: 83d5de7140f630e4487c579607b321da, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -13,8 +13,14 @@ namespace EmirhanErdgn
         public void Initialize(Theme theme)
         {
             RenderSettings.skybox = theme.SkyBox;
-            foreach(Material material in FirstColor) { material.color = theme.FirstColor; }
-            foreach(Material material in SecondColor) { material.color = theme.SecondColor; }
+
+            GetFirstMaterial().color = theme.FirstColor;
+            GetFirstAlternativeMaterial().color = theme.FirstAlternaiveColor;
+            GetFirstSpriteMaterial().color = theme.FirstColor;
+
+            GetSecondMaterial().color = theme.SecondColor;
+            GetSecondAlternativeMaterial().color = theme.SecondAlternativeColor;
+            GetSecondSpriteMaterial().color = theme.SecondColor;
         }
         public Material GetFirstMaterial()
         {
@@ -26,9 +32,18 @@ namespace EmirhanErdgn
         }
         public Material GetFirstSpriteMaterial()
         {
-            return FirstColor[1];
+            return FirstColor[2];
         }
         public Material GetSecondSpriteMaterial()
+        {
+            return SecondColor[2];
+        }
+
+        public Material GetFirstAlternativeMaterial()
+        {
+            return FirstColor[1];
+        }
+        public Material GetSecondAlternativeMaterial()
         {
             return SecondColor[1];
         }

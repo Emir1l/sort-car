@@ -7,7 +7,13 @@ namespace EmirhanErdgn
     {
         [Header("Materials")]
         public Material SkyBox;
+
+        [Header("First Color")]
         public Color FirstColor;
+        public Color FirstAlternaiveColor;
+
+        [Header("First Color")]
         public Color SecondColor;
+        public Color SecondAlternativeColor;
     }
 }
