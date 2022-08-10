@@ -2,7 +2,7 @@ namespace EmirhanErdgn
 {
     public enum EGridType
     {
-        PURPLE,
-        YELLOW
+        FIRSTCOLOR,
+        SECONDCOLOR
     }
 }

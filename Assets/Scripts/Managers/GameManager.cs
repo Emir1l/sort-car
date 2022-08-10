@@ -33,7 +33,7 @@ namespace EmirhanErdgn
         /// </summary>
         private void InitializeWorld()
         {
-            Level currentLevel = m_gameSettings.Levels.FirstOrDefault();
+            Level currentLevel = GetCurrentLevel();
 
             ThemeManager.Instance.Initialize(currentLevel.Theme);
 
@@ -95,6 +95,11 @@ namespace EmirhanErdgn
             if (m_gameSettings == null)return null;
 
             return m_gameSettings;
+        }
+
+        public Level GetCurrentLevel()
+        {
+            return m_gameSettings.Levels.FirstOrDefault();
         }
 
     }

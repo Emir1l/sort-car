@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Theme_01
   m_EditorClassIdentifier: 
   SkyBox: {fileID: 2100000, guid: 1f35b25063fbb0840b684ad2c9da274d, type: 2}
-  FirstColor: {r: 0.6626558, g: 0, b: 0.66800004, a: 1}
+  FirstColor: {r: 0.57325715, g: 0, b: 0.6666667, a: 1}
   SecondColor: {r: 1, g: 0.8357579, b: 0, a: 1}
