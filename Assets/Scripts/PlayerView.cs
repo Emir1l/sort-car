@@ -3,17 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using EmirhanErdgn;
 
-public class PlayerView : Singleton<PlayerView>
+public class PlayerView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

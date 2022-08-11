@@ -85,7 +85,6 @@ namespace EmirhanErdgn
             return m_playerView;
         }
 
-
         /// <summary>
         /// This function returns related Game Settings.
         /// </summary>
@@ -97,6 +96,10 @@ namespace EmirhanErdgn
             return m_gameSettings;
         }
 
+        /// <summary>
+        /// This Function returns relateed current level.
+        /// </summary>
+        /// <returns></returns>
         public Level GetCurrentLevel()
         {
             return m_gameSettings.Levels.FirstOrDefault();
