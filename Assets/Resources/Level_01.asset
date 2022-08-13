@@ -15,3 +15,15 @@ MonoBehaviour:
   Id: 0
   SceneName: Game
   Theme: {fileID: 11400000, guid: 11c4709e712aa0447bf9dade3597ecf2, type: 2}
+  FirstCarAmount: 4
+  SecondCarAmount: 5
+  FirstColorCars:
+  - {fileID: 958281937203993520, guid: 766addec13ef08045994a0adee0b5dbb, type: 3}
+  - {fileID: 4947469446441986342, guid: c44b50a597ec8fe49ba31057dec2eaad, type: 3}
+  - {fileID: 7034031917305962010, guid: de9c75639431ebf49ac22f1f5551b9c2, type: 3}
+  - {fileID: 3053787753670328563, guid: 00fa10c9236be9d4c843dbf39851e552, type: 3}
+  SecondColorCars:
+  - {fileID: 958281937203993520, guid: 51b42e82427d0a9409b7a82760f0cfbf, type: 3}
+  - {fileID: 4947469446441986342, guid: f992a14d2538a7541bda94a67b168ccb, type: 3}
+  - {fileID: 7034031917305962010, guid: c379d8a5d1fedf14dbc2d17eaf86b96d, type: 3}
+  - {fileID: 3053787753670328563, guid: e4fa16632fc7847459f4886fd60aeb25, type: 3}

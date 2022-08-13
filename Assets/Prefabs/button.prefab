@@ -93,9 +93,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1854476426384381738}
   - component: {fileID: 5833713970783638700}
+  - component: {fileID: 3844545082531237639}
   m_Layer: 0
   m_Name: button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +108,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366768645216816528}
-  m_LocalRotation: {x: -0.19225481, y: 0.0070557096, z: 0.04042577, w: 0.9804867}
+  m_LocalRotation: {x: -0.1922576, y: 0.0070536584, z: 0.040427905, w: 0.98048604}
   m_LocalPosition: {x: 19.8, y: -0.7, z: 115}
   m_LocalScale: {x: 0.90000004, y: 0.8999999, z: 0.90000004}
   m_ConstrainProportionsScale: 1
@@ -130,6 +131,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pushButton: {fileID: 3338521705896198187}
+--- !u!136 &3844545082531237639
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366768645216816528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 12
+  m_Height: 16
+  m_Direction: 1
+  m_Center: {x: -0.8, y: -0.42, z: 0}
 --- !u!1 &1798370824923213691
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +206,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fade7782697c52143a008f09b5ea1cde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

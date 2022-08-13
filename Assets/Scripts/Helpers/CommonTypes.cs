@@ -12,6 +12,9 @@ namespace EmirhanErdgn
         //DATA KEYS
         public static string PLAYER_DATA_KEY = "player_data";
         public static string LEVEL_ID_DATA_KEY = "level_data";
+
+        //TAGS
+        public static string BUTTON_TAG = "Button";
     }
 
     public static class GameUtils

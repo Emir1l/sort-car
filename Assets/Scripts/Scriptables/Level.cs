@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace EmirhanErdgn
@@ -9,6 +10,12 @@ namespace EmirhanErdgn
         public int Id;
         public string SceneName;
         public Theme Theme;
+        [Header("Cars")]
+        public int FirstCarAmount;
+        public int SecondCarAmount;
+        public List<GameObject> FirstColorCars;
+        public List<GameObject> SecondColorCars;
+
 
     }
 }

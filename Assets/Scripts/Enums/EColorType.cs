@@ -1,6 +1,6 @@
 namespace EmirhanErdgn
 {
-    public enum ECarType
+    public enum EColorType
     {
         FIRSTCOLOR,
         SECONDCOLOR

@@ -6,7 +6,7 @@ using EmirhanErdgn;
 
 public class GridComponent : MonoBehaviour
 {
-    [SerializeField] private EGridType m_gridType;
+    [SerializeField] private EColorType m_colorType;
     [SerializeField] private SpriteRenderer m_spriteRenderer;
 
     private void Start()
@@ -15,15 +15,20 @@ public class GridComponent : MonoBehaviour
     }
     public void SetSpriteMaterial()
     {
-        if (m_gridType.Equals(EGridType.FIRSTCOLOR))
+        if (m_colorType.Equals(EColorType.FIRSTCOLOR))
         {
             m_spriteRenderer.material = ThemeManager.Instance.GetFirstSpriteMaterial();
         }
-        else if (m_gridType.Equals(EGridType.SECONDCOLOR))
+        else if (m_colorType.Equals(EColorType.SECONDCOLOR))
         {
             m_spriteRenderer.material = ThemeManager.Instance.GetSecondSpriteMaterial();
         }
-       
+
     }
-    
+
+    public EColorType GetColorType()
+    {
+        return m_colorType;
+    }
+
 }

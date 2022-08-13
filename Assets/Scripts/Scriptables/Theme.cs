@@ -12,7 +12,7 @@ namespace EmirhanErdgn
         public Color FirstColor;
         public Color FirstAlternaiveColor;
 
-        [Header("First Color")]
+        [Header("Second Color")]
         public Color SecondColor;
         public Color SecondAlternativeColor;
     }
