@@ -7,6 +7,7 @@ using System.Linq;
 public class LevelComponent : Singleton<LevelComponent>
 {
     #region Serializable Fields
+    [SerializeField] private List<DoorComponent> m_doors = new List<DoorComponent>();
     [SerializeField] private List<GridComponent> m_grids = new List<GridComponent>();
     [SerializeField] private List<ButtonComponent> m_buttons = new List<ButtonComponent>();
     [SerializeField] private List<CarComponent> m_Firstcars = new List<CarComponent>();
@@ -36,6 +37,11 @@ public class LevelComponent : Singleton<LevelComponent>
     public List<ButtonComponent> GetButtons()
     {
         return m_buttons;
+    }
+
+    public List<DoorComponent> GetDoors()
+    {
+        return m_doors;
     }
     public List<CarComponent> GetFirstCars()
     {

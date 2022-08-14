@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b5dbee78d05189499bd597c274e1420, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
+  BarrierSpeed: 10
   Levels:
   - {fileID: 11400000, guid: 8dda37890248aa048a947cde296c69d0, type: 2}
