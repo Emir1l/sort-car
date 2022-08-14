@@ -1754,6 +1754,24 @@ MonoBehaviour:
   - {fileID: 1687968655}
   m_Firstcars: []
   m_Secondcars: []
+  m_firstColorPoints:
+  - {fileID: 2080994244}
+  - {fileID: 852394876}
+  - {fileID: 1340807064}
+  - {fileID: 2108223948}
+  - {fileID: 1454519409}
+  - {fileID: 2134028829}
+  - {fileID: 2042714071}
+  m_secondColorPoints:
+  - {fileID: 1340807064}
+  - {fileID: 2108223948}
+  - {fileID: 1660260257}
+  - {fileID: 1316382167}
+  - {fileID: 2080994244}
+  - {fileID: 852394876}
+  - {fileID: 1454519409}
+  - {fileID: 2134028829}
+  - {fileID: 2042714071}
 --- !u!1 &1404988590
 GameObject:
   m_ObjectHideFlags: 0

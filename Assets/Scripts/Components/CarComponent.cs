@@ -30,9 +30,11 @@ public class CarComponent : MonoBehaviour
             Transform TargetTransform = TargetTranforms[targetRoadIndex];
             if (TargetTransform is null) break;
             Sequence sequence = DOTween.Sequence();
-            Vector3 direction = this.transform.position - TargetTransform.position;
+            float directionY = this.transform.localPosition.y - TargetTransform.localPosition.z;
+            Debug.Log(directionY);
+            Vector3 direction=new Vector3(transform.localRotation.x, directionY, transform.localRotation.z);
             sequence.Join(transform.DOMove(TargetTransform.position, 1f).SetEase(Ease.InOutSine));
-            sequence.Join(transform.DORotateQuaternion(Quaternion.LookRotation(-direction), 0.1f).SetEase(Ease.InOutSine));
+            sequence.Join(transform.DOLocalRotateQuaternion(Quaternion.LookRotation(-direction), 0.1f).SetEase(Ease.InOutSine));
 
             sequence.SetId(GetInstanceID());
             sequence.Play();

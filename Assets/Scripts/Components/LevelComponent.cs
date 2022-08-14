@@ -12,6 +12,8 @@ public class LevelComponent : Singleton<LevelComponent>
     [SerializeField] private List<ButtonComponent> m_buttons = new List<ButtonComponent>();
     [SerializeField] private List<CarComponent> m_Firstcars = new List<CarComponent>();
     [SerializeField] private List<CarComponent> m_Secondcars = new List<CarComponent>();
+    [SerializeField] private List<GridComponent> m_firstColorPoints = new List<GridComponent>();
+    [SerializeField] private List<GridComponent> m_secondColorPoints = new List<GridComponent>();
     #endregion
     #region Private Fields
     #endregion
@@ -43,13 +45,36 @@ public class LevelComponent : Singleton<LevelComponent>
     {
         return m_doors;
     }
-    public List<CarComponent> GetFirstCars()
+
+    public List<CarComponent> GetCars(EColorType type)
     {
-        return m_Firstcars;
+        if (type == EColorType.FIRSTCOLOR)
+        {
+            return m_Firstcars;
+        }
+        else if (type == EColorType.SECONDCOLOR)
+        {
+            return m_Secondcars;
+        }
+        else
+        {
+            return null;
+        }
     }
-    public List<CarComponent> GetSecondCars()
+    public List<GridComponent> GetPoints(EColorType type)
     {
-        return m_Secondcars;
+        if (type == EColorType.FIRSTCOLOR)
+        {
+            return m_firstColorPoints;
+        }
+        else if (type == EColorType.SECONDCOLOR)
+        {
+            return m_secondColorPoints;
+        }
+        else
+        {
+            return null;
+        }
     }
 
     #endregion

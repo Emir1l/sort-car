@@ -14,7 +14,7 @@ public class QueueComponent : MonoBehaviour
     [Header("Color")]
     [SerializeField] private EColorType m_colorType;
     private Level currentLevel => GameManager.Instance.GetCurrentLevel();
-    private LevelComponent levelComponent=>LevelComponent.Instance;
+    private LevelComponent levelComponent => LevelComponent.Instance;
 
     private void Start()
     {
@@ -31,14 +31,14 @@ public class QueueComponent : MonoBehaviour
             default:
                 break;
         }
-       
+
     }
     private void FirstColorCarCreate()
     {
         for (int i = 0; i < currentLevel.FirstCarAmount; i++)
         {
             int rndIndex = Random.Range(0, currentLevel.FirstColorCars.Count);
-            GameObject Car= Instantiate(currentLevel.FirstColorCars[rndIndex], BasePoint);
+            GameObject Car = Instantiate(currentLevel.FirstColorCars[rndIndex], BasePoint);
             levelComponent.FirstCarAdd(Car.GetComponent<CarComponent>());
         }
     }
@@ -54,26 +54,26 @@ public class QueueComponent : MonoBehaviour
 
     private void ParkedFirstCars()
     {
-        levelComponent.GetFirstCars()[0].transform.DOMove(FirstPoint.position, 1f);
-        levelComponent.GetFirstCars()[1].transform.DOMove(SecondPoint.position, 2f);
+        levelComponent.GetCars(EColorType.FIRSTCOLOR)[0].transform.DOMove(FirstPoint.position, 1f);
+        levelComponent.GetCars(EColorType.FIRSTCOLOR)[1].transform.DOMove(SecondPoint.position, 2f);
     }
     private void ParkedSecondCars()
     {
-        levelComponent.GetSecondCars()[0].transform.DOMove(FirstPoint.position, 1f);
-        levelComponent.GetSecondCars()[1].transform.DOMove(SecondPoint.position, 2f);
+        levelComponent.GetCars(EColorType.SECONDCOLOR)[0].transform.DOMove(FirstPoint.position, 1f);
+        levelComponent.GetCars(EColorType.SECONDCOLOR)[1].transform.DOMove(SecondPoint.position, 2f);
     }
 
     public CarComponent FirstCarMove()
     {
-       CarComponent car=levelComponent.GetFirstCars().FirstOrDefault();
-        levelComponent.GetFirstCars().Remove(car);
+        CarComponent car = levelComponent.GetCars(EColorType.FIRSTCOLOR).FirstOrDefault();
+        levelComponent.GetCars(EColorType.FIRSTCOLOR).Remove(car);
         return car;
     }
     public CarComponent SecondCarMove()
     {
-        CarComponent car = levelComponent.GetSecondCars().FirstOrDefault();
-        levelComponent.GetSecondCars().Remove(car);
-        
+        CarComponent car = levelComponent.GetCars(EColorType.SECONDCOLOR).FirstOrDefault();
+        levelComponent.GetCars(EColorType.SECONDCOLOR).Remove(car);
+
         return car;
     }
 

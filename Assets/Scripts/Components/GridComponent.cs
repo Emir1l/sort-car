@@ -59,6 +59,10 @@ public class GridComponent : MonoBehaviour
         
         return IsEmpty;
     }
+    public void SetEmpty(bool value)
+    {
+        IsEmpty = value;
+    }
     public int GetfirstPriority()
     {
         return m_firstPriorityValue;

@@ -28,20 +28,27 @@ public class PlayerView : MonoBehaviour
 
             EColorType CurrentColor = hit.collider.GetComponent<ButtonComponent>().GetColorType();
             ButtonComponent button = LevelComponent.Instance.GetButtons().SingleOrDefault(x => x.GetColorType() == CurrentColor);
+            DoorComponent door = LevelComponent.Instance.GetDoors().SingleOrDefault(x => x.GetColorType() == CurrentColor);
+            if (button.GetComplete() is false || door.GetComplete() is false) return;
             button.PushButton();
-            LevelComponent.Instance.GetDoors().SingleOrDefault(x => x.GetColorType() == CurrentColor).OpenBarrier();
+            door.OpenBarrier();
 
-            if (CurrentColor is EColorType.FIRSTCOLOR)
-            {
-                GridComponent TargetGrid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetEmpty() == true && x.GetfirstPriority() > FirstPriority&&x.GetColorType()==EColorType.FIRSTCOLOR);
-                _ = LevelComponent.Instance.GetFirstCars().FirstOrDefault().Move(TargetGrid.GetTargetTransforms(EColorType.FIRSTCOLOR));
-            }
-            else if (CurrentColor is EColorType.SECONDCOLOR)
-            {
-                GridComponent TargetGrid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetEmpty() == true && x.GetSecondPriority() > SecondPriority && x.GetColorType() == EColorType.SECONDCOLOR);
-                _ = LevelComponent.Instance.GetSecondCars().FirstOrDefault().Move(TargetGrid.GetTargetTransforms(EColorType.SECONDCOLOR));
-            }
+            CarMove(CurrentColor);
+
         }
     }
+    private void CarMove(EColorType CurrentColor)
+    {
+        GridComponent TargetGrid = LevelComponent.Instance.GetPoints(CurrentColor).FirstOrDefault(x => x.GetEmpty() == true);
+        CarComponent car = LevelComponent.Instance.GetCars(CurrentColor).FirstOrDefault();
+
+        if (car is null || TargetGrid is null) return;
+
+        _ = car.Move(TargetGrid.GetTargetTransforms(CurrentColor));
+        TargetGrid.SetEmpty(false);
+        LevelComponent.Instance.GetCars(CurrentColor).Remove(car);
+    }
+
+    // aralar?n s?rayla öne gelmesi oyunu kazanma ve kaybetme fonksiyonlar?. aç? düzeltmeleri. 
 
 }

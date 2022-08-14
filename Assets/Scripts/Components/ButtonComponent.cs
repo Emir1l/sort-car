@@ -35,4 +35,8 @@ public class ButtonComponent : MonoBehaviour
     {
         return m_colorType;
     }
+    public bool GetComplete()
+    {
+        return IsComplete;
+    }
 }
