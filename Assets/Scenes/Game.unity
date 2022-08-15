@@ -1436,6 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_isPersistant: 0
+  m_winGroup: {fileID: 361138897}
 --- !u!1 &1243775164
 GameObject:
   m_ObjectHideFlags: 0
