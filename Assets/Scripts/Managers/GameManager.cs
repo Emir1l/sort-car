@@ -12,6 +12,7 @@ namespace EmirhanErdgn
         [SerializeField] private GameSettings m_gameSettings;
 
         #endregion
+
         #region Private Fields
 
         private EGameState gameState = EGameState.NONE;
@@ -36,6 +37,8 @@ namespace EmirhanErdgn
             Level currentLevel = GetCurrentLevel();
 
             ThemeManager.Instance.Initialize(currentLevel.Theme);
+            LevelComponent.Instance.GetQueues(EColorType.FIRSTCOLOR).Initalize();
+            LevelComponent.Instance.GetQueues(EColorType.SECONDCOLOR).Initalize();
 
             ChangeGameState(EGameState.STAND_BY);
         }

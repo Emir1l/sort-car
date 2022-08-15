@@ -1,15 +1,17 @@
 using UnityEngine;
 using EmirhanErdgn;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
+using System;
 
 public class PlayerView : MonoBehaviour
 {
-    private int FirstPriority = 0;
-    private int SecondPriority = 0;
-
+    private bool isPlaying = true;
     void Update()
     {
         PressButton();
+        _ = IsComplete();
     }
 
     private void PressButton()
@@ -44,11 +46,46 @@ public class PlayerView : MonoBehaviour
 
         if (car is null || TargetGrid is null) return;
 
-        _ = car.Move(TargetGrid.GetTargetTransforms(CurrentColor));
-        TargetGrid.SetEmpty(false);
+        _ = car.Move(TargetGrid.GetTargetTransforms(CurrentColor), TargetGrid);
+        DOVirtual.DelayedCall(3.5f, () => { TargetGrid.SetEmpty(false); });
         LevelComponent.Instance.GetCars(CurrentColor).Remove(car);
+        LevelComponent.Instance.GetQueues(CurrentColor).QueueMove(CurrentColor);
+
+
+    }
+    private async UniTask IsComplete()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(5f));
+        if (isPlaying is false) return;
+
+        GridComponent grid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetEmpty() == true);
+        if (grid is null)
+        {
+            GridComponent Grid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetIsCorrect() == false);
+            if (Grid is null)
+            {
+
+                //kazand?n
+                //araba scale punch
+                Debug.Log("asdasd");
+                LevelComponent.Instance.GetCars(EColorType.FIRSTCOLOR).ForEach(x => x.PunchScale());
+                LevelComponent.Instance.GetCars(EColorType.SECONDCOLOR).ForEach(x => x.PunchScale());
+                isPlaying = false;
+                //win ekran?
+            }
+            else
+            {
+                Debug.Log("aaaann");
+                //kaybettin
+                //lose ekran?
+            }
+        }
+
+
+
     }
 
-    // aralar?n s?rayla öne gelmesi oyunu kazanma ve kaybetme fonksiyonlar?. aç? düzeltmeleri. 
+    //  oyunu kazanma ve kaybetme fonksiyonlar?. araban?n üzerinde tik ç?kmas? yada çarp? ç?kmas? oyunu kazanma
+    // ve kaybetme fonksiyonu her butona bas?ld?ktan sonra kontrol edilecek
 
 }

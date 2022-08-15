@@ -11,10 +11,17 @@ namespace EmirhanErdgn
         public string SceneName;
         public Theme Theme;
         [Header("Cars")]
+        [Range(0, 10)] public float CarSpeed;
         public int FirstCarAmount;
         public int SecondCarAmount;
         public List<GameObject> FirstColorCars;
         public List<GameObject> SecondColorCars;
+        [Header("Barrier")]
+        [Range(0, 10)] public float BarrierOpenSpeed;
+        [Range(0, 10)] public float BarrierCloseSpeed;
+        [Header("Button")]
+        [Range(0, 10)] public float StrokeRate;
+
 
 
     }

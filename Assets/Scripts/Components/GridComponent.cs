@@ -13,6 +13,7 @@ public class GridComponent : MonoBehaviour
     [SerializeField] private int m_firstPriorityValue;
     [SerializeField] private int m_secondPriorityValue;
     [SerializeField] private bool IsEmpty = true;
+    private bool IsCorrect = false;
 
     private void Start()
     {
@@ -39,12 +40,10 @@ public class GridComponent : MonoBehaviour
     {
         if (type.Equals(EColorType.FIRSTCOLOR))
         {
-            Debug.Log("baban?");
             return m_Firstpoints;
         }
         else if (type.Equals(EColorType.SECONDCOLOR))
         {
-            Debug.Log("anan?");
             return m_Secondpoints;
         }
         else
@@ -70,6 +69,14 @@ public class GridComponent : MonoBehaviour
     public int GetSecondPriority()
     {
         return m_secondPriorityValue;
+    }
+    public bool GetIsCorrect()
+    {
+        return IsCorrect;
+    }
+    public void SetCorrect(bool value)
+    {
+        IsCorrect = value;
     }
     public List<Transform> GetFirstTransforms()
     {
