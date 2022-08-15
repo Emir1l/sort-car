@@ -15,6 +15,7 @@ public class LevelComponent : Singleton<LevelComponent>
     #endregion
 
     #region Private Fields
+    private List<CarComponent>m_cars = new List<CarComponent>();
     private List<CarComponent> m_Firstcars = new List<CarComponent>();
     private List<CarComponent> m_Secondcars = new List<CarComponent>();
     #endregion
@@ -27,6 +28,7 @@ public class LevelComponent : Singleton<LevelComponent>
     public void FirstCarAdd(CarComponent Car)
     {
         m_Firstcars.Add(Car);
+        m_cars.Add(Car);
     }
 
     /// <summary>
@@ -36,6 +38,7 @@ public class LevelComponent : Singleton<LevelComponent>
     public void SecondCarAdd(CarComponent Car)
     {
         m_Secondcars.Add(Car);
+        m_cars.Add(Car);
     }
     #endregion
 
@@ -131,6 +134,14 @@ public class LevelComponent : Singleton<LevelComponent>
         }
     }
 
+    /// <summary>
+    /// This Funciton Return All Cars.
+    /// </summary>
+    /// <returns></returns>
+    public List<CarComponent> GetCars()
+    {
+        return m_cars;
+    }
     #endregion
 }
 

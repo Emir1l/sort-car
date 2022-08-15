@@ -3,7 +3,6 @@ using UnityEngine;
 using EmirhanErdgn;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
-using UnityEngine.UI;
 public class CarComponent : MonoBehaviour
 {
     [SerializeField] private EColorType m_colorType;
@@ -59,8 +58,8 @@ public class CarComponent : MonoBehaviour
 
     public void PunchScale()
     {
-        transform.DOPunchScale(transform.localScale * 5f, 2f,1);
-        Debug.Log("Büyüdü");
+        transform.DOPunchScale(transform.localScale * 0.06f, 2f,1);
+
     }
     public void CanvasLookCamera()
     {
@@ -70,4 +69,6 @@ public class CarComponent : MonoBehaviour
         m_canvas.transform.DOPunchRotation(Vector3.up * 20, 2f, 1);
 
     }
+
+
 }
