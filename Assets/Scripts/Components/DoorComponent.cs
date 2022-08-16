@@ -6,11 +6,19 @@ using DG.Tweening;
 
 public class DoorComponent : MonoBehaviour
 {
+    #region Serializable Fields
     [SerializeField] private Transform m_barrier;
     [SerializeField] private EColorType m_colorType;
+    #endregion
+
+    #region Private Fields
     private bool IsComplete = true;
     private Level level => GameManager.Instance.GetCurrentLevel();
+    #endregion
 
+    /// <summary>
+    /// This Function Helper For Open Barrier
+    /// </summary>
     public void OpenBarrier()
     {
         if (IsComplete is false) return;
@@ -32,14 +40,26 @@ public class DoorComponent : MonoBehaviour
 
         sequence.Play();
     }
+
+    #region Getters
+    /// <summary>
+    /// This Function Returns Color Type.
+    /// </summary>
+    /// <returns></returns>
     public EColorType GetColorType()
     {
         return m_colorType;
     }
+
+    /// <summary>
+    /// This Function Returns Complete Value.
+    /// </summary>
+    /// <returns></returns>
     public bool GetComplete()
     {
         return IsComplete;
     }
+    #endregion
 }
 
 

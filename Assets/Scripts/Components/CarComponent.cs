@@ -5,21 +5,39 @@ using DG.Tweening;
 using Cysharp.Threading.Tasks;
 public class CarComponent : MonoBehaviour
 {
+    #region Serializable Fields
     [SerializeField] private EColorType m_colorType;
     [SerializeField] private CanvasGroup m_group;
     [SerializeField] private Canvas m_canvas;
-
-
+    #endregion
+    #region Private Fields
     private Level level => GameManager.Instance.GetCurrentLevel();
+    #endregion
 
+    /// <summary>
+    /// This Funct?on Return Car Color Type.
+    /// </summary>
+    /// <returns></returns>
     public EColorType GetCarType()
     {
         return m_colorType;
     }
+
+    /// <summary>
+    /// This Function Edit Car Color Type.
+    /// </summary>
+    /// <param name="Type"></param>
     public void SetCarType(EColorType Type)
     {
         m_colorType = Type;
     }
+
+    /// <summary>
+    /// This Function Helper For Car Move.
+    /// </summary>
+    /// <param name="TargetTranforms"></param>
+    /// <param name="CurrentGrid"></param>
+    /// <returns></returns>
     public async UniTask Move(List<Transform> TargetTranforms, GridComponent CurrentGrid)
     {
         int targetRoadIndex = 0;
@@ -56,11 +74,18 @@ public class CarComponent : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This Function Helper For PunchScale.
+    /// </summary>
     public void PunchScale()
     {
         transform.DOPunchScale(transform.localScale * 0.06f, 2f,1);
 
     }
+
+    /// <summary>
+    /// This Function Helper For Look The Camera.
+    /// </summary>
     public void CanvasLookCamera()
     {
         Vector3 direction = Camera.main.transform.position - transform.position;

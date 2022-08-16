@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using EmirhanErdgn;
 using DG.Tweening;
@@ -42,6 +40,9 @@ public class QueueComponent : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// This Function Helper For Instantiate Car.
+    /// </summary>
     private void FirstColorCarCreate()
     {
         for (int i = 0; i < currentLevel.FirstCarAmount; i++)
@@ -51,6 +52,10 @@ public class QueueComponent : MonoBehaviour
             levelComponent.FirstCarAdd(Car.GetComponent<CarComponent>());
         }
     }
+
+    /// <summary>
+    /// This Function Helper For Instantiate Car.
+    /// </summary>
     private void SecondColorCarCreate()
     {
         for (int i = 0; i < currentLevel.SecondCarAmount; i++)
@@ -61,18 +66,28 @@ public class QueueComponent : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This Function Helper For Parked Awake.
+    /// </summary>
     private void ParkedFirstCars()
     {
         levelComponent.GetCars(EColorType.FIRSTCOLOR)[0].transform.DOMove(FirstPoint.position, 1f);
         levelComponent.GetCars(EColorType.FIRSTCOLOR)[1].transform.DOMove(SecondPoint.position, 2f);
     }
+
+    /// <summary>
+    /// This Function Helper For Parked Awake.
+    /// </summary>
     private void ParkedSecondCars()
     {
         levelComponent.GetCars(EColorType.SECONDCOLOR)[0].transform.DOMove(FirstPoint.position, 1f);
         levelComponent.GetCars(EColorType.SECONDCOLOR)[1].transform.DOMove(SecondPoint.position, 2f);
     }
 
-
+    /// <summary>
+    /// This Function Helper For Car Queue Move.
+    /// </summary>
+    /// <param name="type"></param>
     public void QueueMove(EColorType type)
     {
         DOVirtual.DelayedCall(0.75f, () =>

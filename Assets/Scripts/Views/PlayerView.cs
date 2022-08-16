@@ -2,23 +2,22 @@ using UnityEngine;
 using EmirhanErdgn;
 using System.Linq;
 using Cysharp.Threading.Tasks;
-using DG.Tweening;
-using System;
 
 public class PlayerView : MonoBehaviour
 {
-    // arabalar platform alt?nda gidiyor düzelt
-    // kodlar? gözden geçir ve comment ekle
-
-
-
+    #region Private Region
     private bool isPlaying = true;
+    #endregion
+
     void Update()
     {
         PressButton();
         _ = IsComplete();
     }
 
+    /// <summary>
+    /// This Function Helper For Press The Button
+    /// </summary>
     private void PressButton()
     {
 
@@ -44,6 +43,11 @@ public class PlayerView : MonoBehaviour
             
         }
     }
+
+    /// <summary>
+    /// This Function Helper For Move Car
+    /// </summary>
+    /// <param name="CurrentColor"></param>
     private void CarMove(EColorType CurrentColor)
     {
         GridComponent TargetGrid = LevelComponent.Instance.GetPoints(CurrentColor).FirstOrDefault(x => x.GetEmpty() == true);
@@ -58,6 +62,11 @@ public class PlayerView : MonoBehaviour
 
 
     }
+
+    /// <summary>
+    /// This Function Helper For Complete Level.
+    /// </summary>
+    /// <returns></returns>
     private async UniTask IsComplete()
     {
         await UniTask.WaitForEndOfFrame();
@@ -67,17 +76,13 @@ public class PlayerView : MonoBehaviour
         GridComponent grid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetEmpty() == true);
         if (grid is null)
         {
-            Debug.Log("dawd");
             GridComponent Grid = LevelComponent.Instance.GetGrids().FirstOrDefault(x => x.GetIsCorrect() == false);
             if (Grid is null)
             {
-
-                //kazand?n
-                //araba scale punch
-                Debug.Log("kazand?n");
                 LevelComponent.Instance.GetCars().ForEach(x => x.PunchScale());
                 isPlaying = false;
                 GameUtils.SwitchCanvasGroup(null, InterfaceManager.Instance.GetWinGroup());
+                GameManager.Instance.ChangeGameState(EGameState.WIN);
             }
         }
     }
